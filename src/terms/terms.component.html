@@ -1,0 +1,21 @@
+<div class="terms">
+
+  <div class="terms-grid">
+    <app-toggle-switcher
+      [titles]="titles"
+      [(selectedIndex)]="selectedIndex"
+      class="tabs">
+    </app-toggle-switcher>
+
+    <div class="accordions">
+      <app-accordion
+        *ngFor="let term of terms; let i = index"
+        [title]="term.title"
+        [description]="term.description"
+        [rules]="term.rules"
+        [open]="selectedIndex === i"
+        (toggle)="onToggle(i)">
+      </app-accordion>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+.accordion {
+  background-color: var(--aditional);
+  margin-bottom: 8px;
+  position: relative;
+  background-color: var(--dark-l5);
+  font-family: "Sofia Sans", sans-serif;
+}
+.accordion.open {
+  border: 2px solid var(--primary-l); 
+}
+.accordion.open::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: var(--primary); 
+  filter:blur(2px); 
+}
+.accordion .header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--light);
+  background-color: var(--dark-l5);
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--muted);
+  margin-right: 14px;
+}
+
+.accordion .header h2 {
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.accordion .subterms-list {
+  margin-top: 0.5rem;
+  list-style-type: none;
+}
+
+.content-wrapper{
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 133%;
+  color: var(--light);
+  text-align: start;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: scaleY(0.75);
+}
+.content-wrapper.open {
+  max-height: max-content; 
+  opacity: 1;
+  transform: scaleY(1);
+}
+.subterms-list div {
+  border-top: 1px solid var(--muted);
+  width: 97%;
+  padding: 20px 0;
+}
+
+.subterm-content {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+  padding-left: 1.5rem;
+}
+
+.subterm-content p {
+  margin-bottom: 0.5rem;
+}
+
+.corner-icon {
+  position: absolute;
+  width: 34px;
+  height: 22px;
+  fill: var(--light); 
+  transition: opacity 0.3s ease-in-out, fill 0.4s ease-in-out;
+}
+
+.corner-icon.top-left {
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.corner-icon.top-right {
+  top: 0;
+  right: 0;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.corner-icon.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.corner-icon.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.accordion.open .corner-icon {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.accordion:not(.open) .corner-icon {
+  opacity: 0;
+}
+
+.accordion:not(.open) .corner-icon.top-left,
+.accordion:not(.open) .corner-icon.bottom-right {
+  opacity: 1;
+}
+.corner-icon path {
+  fill: var(--muted);
+  transition: fill 0.3s ease-in-out;
+}
+
+.accordion.open .corner-icon path {
+  fill: var(--primary);
+}
+
+
+.rule-number {
+  font-weight: 700;
+  color: var(--muted); 
+  margin-left: 10px;
+  padding:0 10px;
+}
+
+.rule-text {
+  color: var(--light); 
+  font-weight: 400;
+}
+
+.highlight {
+  font-weight: 800;
+  color: var(--light); 
+}

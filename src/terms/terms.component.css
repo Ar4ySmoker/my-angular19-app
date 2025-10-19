@@ -1,0 +1,27 @@
+.terms {
+  padding: 21px 17px 17px 17px;
+  max-width: 1200px;
+  margin: 64px auto 0;
+}
+h1 {
+  font-size: 48px;
+  line-height: 120%;
+  text-align: start;
+  color: var(--light);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--muted);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr; 
+  gap: 72px;
+  align-items: start;
+}
