@@ -6,7 +6,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './toggle-switcher.component.html',
-  styleUrls: ['./toggle-switcher.component.css'],
 })
 export class ToggleSwitcherComponent {
   @Input() titles: string[] = [];

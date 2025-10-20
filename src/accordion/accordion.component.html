@@ -1,7 +1,7 @@
 <div class="accordion" [class.open]="open">
   <div class="header-wrapper" (click)="onToggle()">
     <div class="header">
-      <h2>{{ title }}</h2>
+      <h2 class="font-extrabold text-red">{{ title }}</h2>
       <span class="icon">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g *ngIf="!open" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
