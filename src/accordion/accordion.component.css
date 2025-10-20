@@ -2,7 +2,6 @@
   background-color: var(--aditional);
   margin-bottom: 8px;
   position: relative;
-  background-color: var(--dark-l5);
   font-family: "Sofia Sans", sans-serif;
 }
 .accordion.open {
@@ -20,15 +19,17 @@
   filter:blur(2px); 
 }
 .accordion .header {
-  padding: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--light);
-  background-color: var(--dark-l5);
+  background-color: var(--dark);
   cursor: pointer;
 }
-
+.accordion.accordion.open .header {
+  background-color: var(--dark-l5);
+}
 .icon {
   width: 24px;
   height: 24px;
@@ -59,7 +60,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
   transform: scaleY(0.75);
 }
 .content-wrapper.open {
@@ -76,20 +77,17 @@
 .subterm-content {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--light);
   padding-left: 1.5rem;
 }
 
-.subterm-content p {
-  margin-bottom: 0.5rem;
-}
 
 .corner-icon {
   position: absolute;
   width: 34px;
   height: 22px;
   fill: var(--light); 
-  transition: opacity 0.3s ease-in-out, fill 0.4s ease-in-out;
+  transition: opacity 0.3s ease, fill 0.4s ease;
 }
 
 .corner-icon.top-left {
@@ -130,7 +128,7 @@
 }
 .corner-icon path {
   fill: var(--muted);
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease;
 }
 
 .accordion.open .corner-icon path {

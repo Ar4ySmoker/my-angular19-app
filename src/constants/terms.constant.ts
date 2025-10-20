@@ -2,7 +2,7 @@ export const TERMS = [
   {
     tab: 'Terms and Conditions',
     title: 'General Rules',
-    description: `We've made registering at our casino as easy as possible so you don't have to go through any hassles and formalities.<br/> Registering takes only a few seconds and then you can start enjoying many bonuses and offers at`,
+    description: `We've made registering at our casino as easy as possible so you don't have to go through any hassles and formalities. Registering takes only a few seconds and then you can start enjoying many bonuses and offers at`,
     rules: [
       '1.1: The first deposit bonus is 100% up to €200 + 70 Free Spins.',
       '1.2: To receive a 100% bonus on the first deposit, players must deposit at least €20.',

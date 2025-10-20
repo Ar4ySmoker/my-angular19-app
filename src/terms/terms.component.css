@@ -19,6 +19,9 @@ h2 {
   margin-bottom: 16px;
 }
 
+.accordions {
+  background-color: var(--dark-l5);
+}
 .terms-grid {
   display: grid;
   grid-template-columns: 230px 1fr; 
