@@ -1,30 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccordionComponent } from '../accordion/accordion.component';
 import { ToggleSwitcherComponent } from '../toggle-switcher/toggle-switcher.component';
 import { TERMS } from '../constants/terms.constant';
-import { Term } from '../types/Term';
+import type { Term } from '../types/Term';
 
 @Component({
   selector: 'app-terms',
   standalone: true,
   imports: [CommonModule, AccordionComponent, ToggleSwitcherComponent],
   templateUrl: './terms.component.html',
-  styleUrls: ['./terms.component.css']
 })
 export class TermsComponent {
-  selectedIndex = 0;
   terms: Term[] = TERMS;
+  i: number = 0;
+  titles = this.terms.map(t => t.title);
+  tabs = this.terms.map(t => t.tab);
+  selectedTab = signal<string>(this.terms[0]?.tab ?? '');
 
-  get titles(): string[] {
-    return this.terms.map(term => term.tab);
+  onSelect(tab: string) {
+    if (this.selectedTab() === tab) {
+      this.selectedTab.set('');
+    } else {
+      this.selectedTab.set(tab);
+    }
+    console.log('New selectedTab:', this.selectedTab());
   }
 
-  onToggle(index: number): void {
-  if (this.selectedIndex === index) {
-    this.selectedIndex = -1;
-  } else {
-    this.selectedIndex = index;
-  }
-}
 }

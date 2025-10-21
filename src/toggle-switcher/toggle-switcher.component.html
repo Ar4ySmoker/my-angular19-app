@@ -1,51 +1,54 @@
-<div class="toggle-switcher">
-<div role="tablist" class="flex flex-col">
-<div
-    *ngFor="let title of titles; let i = index"
-    role="tab"
-    [attr.aria-selected]="selectedIndex === i"
-    [class.active]="selectedIndex === i"
-    (click)="select(i)"
-    [attr.tabindex]="selectedIndex === i ? 0 : -1"
-  >
-    {{ title }}
-</div>
-</div>
-<svg class="corner-icon top-left" width="20" height="20" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-<linearGradient id="myGradient-lt" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F4E02B"/>
-      <stop offset="100%" stop-color="#F48F6B"/>
-    </linearGradient>
-  </defs>
-  <path fill="url(#myGradient-lt)" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" />
+<div class="relative  p-0 hidden xl:block">
+  <div role="tablist" class="flex flex-col bg-darkL5 border border-muted ">
+    <div *ngFor="let tab of tabs" [class.active]="selectedTab === tab" (click)="select(tab)"
+      class="text-light capitalize cursor-pointer px-[16px] py-[12px] font-semibold text-[16px] border-b border-muted last:border-b-0 focus:bg-dark hover:bg-dark transition-colors duration-200 ease-in-out"
+      [ngClass]="{
+       'bg-dark': selectedTab === tab
+     }">
+      {{ tab }}
+    </div>
+
+
+  </div>
+  <svg class="absolute top-0 left-0 transform rotate-180" width="25" height="15" viewBox="0 0 30 18"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="myGradient-lt" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F4E02B" />
+        <stop offset="100%" stop-color="#F48F6B" />
+      </linearGradient>
+    </defs>
+    <path fill="url(#myGradient-lt)" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" />
 
   </svg>
-  <svg class="corner-icon top-right" width="20" height="20" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
-     <defs>
-<linearGradient id="myGradient-rt" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F4E02B"/>
-      <stop offset="100%" stop-color="#F48F6B"/>
-    </linearGradient>
-  </defs>
+  <svg class="absolute top-0 right-0 transform rotate-180 scale-x-[-1]" width="25" height="15" viewBox="0 0 30 18"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="myGradient-rt" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F4E02B" />
+        <stop offset="100%" stop-color="#F48F6B" />
+      </linearGradient>
+    </defs>
     <path fill="url(#myGradient-rt)" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" />
   </svg>
-  <svg class="corner-icon bottom-left" width="20" height="20" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
-     <defs>
-<linearGradient id="myGradient-lb" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F4E02B"/>
-      <stop offset="100%" stop-color="#E84A11"/>
-    </linearGradient>
-  </defs>
+  <svg class="absolute bottom-0 left-0 scale-x-[-1]" width="25" height="15" viewBox="0 0 30 18"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="myGradient-lb" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F4E02B" />
+        <stop offset="100%" stop-color="#E84A11" />
+      </linearGradient>
+    </defs>
     <path fill="url(#myGradient-lb)" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" />
   </svg>
-  <svg class="corner-icon bottom-right" width="20" height="20" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
-     <defs>
-<linearGradient id="myGradient-rb" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F4E02B"/>
-      <stop offset="100%" stop-color="#E84A11"/>
-    </linearGradient>
-  </defs>
+  <svg class="absolute bottom-0 right-0 transform  " width="25" height="15" viewBox="0 0 30 18"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="myGradient-rb" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F4E02B" />
+        <stop offset="100%" stop-color="#E84A11" />
+      </linearGradient>
+    </defs>
     <path fill="url(#myGradient-rb)" d="M30 18H0.666666L24.6964 12.0894L30 0.666666V18Z" />
   </svg>
 </div>

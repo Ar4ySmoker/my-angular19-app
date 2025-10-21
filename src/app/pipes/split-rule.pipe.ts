@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'splitRule'
+  name: 'splitRule',
+  standalone: true,
 })
 export class SplitRulePipe implements PipeTransform {
 

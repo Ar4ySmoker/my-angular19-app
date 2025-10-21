@@ -1,21 +1,20 @@
-<div class="terms">
-
-  <div class="terms-grid">
-    <app-toggle-switcher
-      [titles]="titles"
-      [(selectedIndex)]="selectedIndex"
-      class="tabs">
+<div class=" mt-20 mx-auto px-4 sm:mx-6 lg:mx-8">
+  <div class="grid grid-cols-12 gap-[32px] lg:gap-[72px] ">
+    <app-toggle-switcher [tabs]="tabs" [titles]="titles" [selectedTab]="selectedTab()"
+      (selectedTabChange)="onSelect($event)" class="col-span-3 ">
     </app-toggle-switcher>
 
-    <div class="accordions">
-      <app-accordion
-        *ngFor="let term of terms; let i = index"
-        [title]="term.title"
-        [description]="term.description"
-        [rules]="term.rules"
-        [open]="selectedIndex === i"
-        (toggle)="onToggle(i)">
+
+    <div class="col-span-12 xl:col-span-9  2xl:max-w-[945px] xs:max-w-[735px] mr-[16px] flex flex-col gap-[8px] ">
+      <div>
+        <h1 class="font-[Sofia Sans] font-extrabold text-[36px] text-light">Terms and Conditions</h1>
+        <p class="text-muted text-[24px] font-extrabold mb-[16px] leading-tight">Registration and Account</p>
+      </div>
+      <app-accordion *ngFor="let term of terms; let i = index" [title]="term.title" [description]="term.description"
+        [rules]="term.rules" [termIndex]="i" [open]="selectedTab() === term.tab" (toggle)="onSelect(term.tab)"
+        class=" ">
       </app-accordion>
+
     </div>
   </div>
 </div>

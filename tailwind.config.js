@@ -6,11 +6,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: 'var(--dark)', 
+        dark: 'var(--dark)',
+        darkL5: 'var(--dark-l5)',
+        primary: 'var(--primary)',
+        primaryL: 'var(--primary-l)',
+        secondary: 'var(--secondary)',
         muted: 'var(--muted)',
+        light: 'var(--light)',
+        aditional: 'var(--aditional)',
+        aditionalL: 'var(--aditional-l)',
       },
       fontFamily: {
-        sans: ['"Sofia Sans"', '"Rubik"', '"Helvetica Neue"', 'sans-serif'],
+        sans: ['Sofia Sans', 'Rubik', 'Helvetica Neue', 'sans-serif'],
       },
     },
   },

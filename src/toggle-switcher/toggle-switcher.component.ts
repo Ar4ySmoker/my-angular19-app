@@ -9,13 +9,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ToggleSwitcherComponent {
   @Input() titles: string[] = [];
-  @Input() selectedIndex = 0;
-  @Output() selectedIndexChange = new EventEmitter<number>();
+  @Input() tabs: string[] = [];
+  @Input() selectedTab: string = '';
+  @Output() selectedTabChange = new EventEmitter<string>();
 
-  select(index: number) {
-    if (index !== this.selectedIndex) {
-      this.selectedIndex = index;
-      this.selectedIndexChange.emit(index);
+  select(tab: string) {
+    if (tab !== this.selectedTab) {
+      this.selectedTab = tab;
+      this.selectedTabChange.emit(tab);
     }
   }
 }
